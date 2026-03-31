@@ -1,0 +1,54 @@
+Dr. Jochen Heistermann
+Informatik, TIS/TIK24
+Grundlagen der Informatik
+Praxisprojekt
+Abgabe 15.4.2026
+
+Vorgehensweise:
+1. Bilden Sie Gruppen und melden Sie deren Teilnehmer an unter
+jochen.heistermann@t-online.de . Die Gruppen sollten jeweils ca. fünf Teilnehmer
+umfassen. Alle bekommen am Ende die gleiche Note.
+2. Entwickeln Sie die Programme jeweils in Python unter Jupyter Notebook und reichen
+Sie die Programme mit ein.
+3. Beschreiben Sie die einzelnen Lösungsschritte separat in Textform
+Aufgabe 1:
+a) Entwickeln Sie ein CNN in Python (mit Keras/Tensorflow) zur Erkennung von Autos
+und speichern dieses Netz ab. Verwenden Sie dazu z.B. den CIFAR-10 Datensatz. (5%)
+b) Lösen Sie Aufgabe a) ohne Verwendung von keras.models oder keras.layers.
+Schreiben Sie das CNN in Python und entwickeln Sie Code für die benötigten
+Funktionen. Das Lernen erfolgt mittels Backpropagation. Entwickeln Sie auch diesen
+Code selbst. (5%)
+c) Laden Sie ein CNN ihrer Wahl aus dem Internet und trainieren Sie damit ihr CNN.
+(5%)
+Aufgabe 2:
+a) Gegeben sind drei Bilder mit Autos darauf. Laden Sie ihr vortrainiertes Netz von
+Aufgabe 1 und suchen Sie die Autos auf den Bildern. Zeichnen Sie jeweils einen
+Rahmen um das gefundene Auto. Geben Sie als Lösung pro Bild folgendes aus (z.B.
+wenn es 5 Autos auf dem Bild gibt):
+1. Ein Bild mit 5 Rahmen um die 5 gefundenen Autos.
+2. Fünf Bilder mit jeweils einem Rahmen um ein Auto.
+Sie können pro Bild mit mehreren verschiedenen Rahmengrößen arbeiten und diese
+Rahmengrößen einfach per Hand selbst festlegen. Das vereinfacht die Aufgabe
+entscheidend! (20%)
+b) Suchen Sie sich drei weitere Bilder Ihrer Wahl aus dem Internet. Dort sollen jeweils
+etwa 5-10 Autos zu sehen sein. Zeichnen Sie die Rahmen analog zu a) ein. (15%)
+
+Aufgabe 3: SciQ-Scorecards-Chatbot
+Entwickeln Sie einen Chatbot zur Beantwortung naturwissenschaftlicher Multiple-ChoiceFragen auf Basis des Datensatzes „allenai/sciq“. (50%)
+Verwenden Sie dafür den Tokenizer sowie die Eingabe-Embedding-Matrix des Modells „bertbase-uncased“. Auf dieser Grundlage sollen Sie ein eigenes kleines Klassifikationsmodell
+implementieren, das zu einer Frage mit vier Antwortoptionen die wahrscheinlich beste
+
+Antwort auswählt.
+Das System soll den Datensatz laden, die Eingaben verarbeiten, das Modell trainieren, auf
+Validierungs- und Testdaten auswerten sowie eine Funktion `ask_bot(question, options,
+support="")` bereitstellen.
+Erwartet wird ein vollständig ausführbares Programm, das:
+- den SciQ-Datensatz verarbeitet,
+- ein Modell zur Auswahl der richtigen Antwort trainiert,
+- die Ergebnisqualität auf Validierungs- und Testdaten ausgibt und dabei mindestens 70%
+richtige Antworten liefert auf Trainings- und Testdaten
+- und die Funktion `ask_bot` am Ende drei Mal automatisch aufruft und die Ergebnisse
+anzeigt.
+Alle weiteren fachlichen und technischen Erläuterungen entnehmen Sie bitte dem Handout.
+
+

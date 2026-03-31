@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.so
+.venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Daten und Modelle (werden beim Ausführen erstellt)
+data/
+models/
+
+# OS
+.DS_Store
+Thumbs.db
