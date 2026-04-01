@@ -11,7 +11,7 @@ __pycache__/
 
 # Daten und Modelle (werden beim Ausführen erstellt)
 data/
-models/
+# models/
 
 # OS
 .DS_Store
