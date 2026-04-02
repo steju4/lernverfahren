@@ -4,13 +4,13 @@ Praxisprojekt für die Vorlesung Grundlagen maschineller Lernverfahren (TIS/TIK2
 
 ### Bearbeiter
 
-| Name | Studiengang |
-|------|-------------|
-| Johann Flögel | TIK24 |
-| Chiara Herz | TIK24 |
-| Yanneck Kolb | TIK24 |
-| Lucius Lechner | TIK24 |
-| Julian Stengele | TIK24 |
+| Name            | Studiengang |
+| --------------- | ----------- |
+| Johann Flögel   | TIK24       |
+| Chiara Herz     | TIK24       |
+| Yanneck Kolb    | TIK24       |
+| Lucius Lechner  | TIK24       |
+| Julian Stengele | TIK24       |
 
 ## Aufbau
 
@@ -31,6 +31,7 @@ Das Notebook `notebooks/aufgabe_1.ipynb` enthält alle drei Teilaufgaben:
 - **1c)** MobileNetV2 aus dem Internet laden und per Fine-Tuning anpassen
 
 Die gleichen Scripte liegen auch unter `src/` als einzelne Python-Dateien:
+
 - `src/aufgabe_1a.py`, `src/aufgabe_1b.py`, `src/aufgabe_1c.py`
 
 ### Ausführen
@@ -46,6 +47,34 @@ pip install -r requirements.txt
 ### Ergebnisse
 
 Nach dem Training werden die Modelle gespeichert:
+
 - `models/task1a/car_cnn.keras`
 - `models/task1b/car_cnn_scratch.npz`
 - `models/task1c/car_cnn_mobilenetv2.keras`
+
+## Aufgabe 3: SciQ-Scorecards-Chatbot
+
+Das Notebook `notebooks/aufgabe_3.ipynb` implementiert einen Chatbot zur Beantwortung naturwissenschaftlicher Multiple-Choice-Fragen auf Basis des Datensatzes `allenai/sciq`.
+
+- Tokenizer und Eingabe-Embedding-Matrix von `bert-base-uncased`
+- Eigenes MLP zur Auswahl der wahrscheinlich besten Antwort aus vier Optionen
+- Training, Validation und Test-Evaluation
+- Inferenzfunktion `ask_bot(question, options, support="")`
+
+### Ausführen
+
+Notebook in Google Colab (GPU-Laufzeit empfohlen) oder lokal in Jupyter öffnen und alle Zellen von oben nach unten ausführen. Der SciQ-Datensatz und BERT werden automatisch heruntergeladen (Internet nötig).
+
+### Pakete installieren
+
+```
+pip install -r requirements.txt
+```
+
+### Ergebnisse
+
+Nach dem Training wird das beste Modell gespeichert:
+
+- `models/task3/sciq_mlp.pt`
+
+Erzielte Accuracy (Test): **73.3%** (Anforderung: mindestens 70%)
