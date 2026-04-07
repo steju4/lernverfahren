@@ -53,6 +53,7 @@ def main():
     loss, acc = model.evaluate(x_test_c, y_test_c, verbose=0)
     print(f"Test-Accuracy: {acc:.4f}")
 
+    # Speichern
     Path('models/task1c').mkdir(parents=True, exist_ok=True)
     model.save('models/task1c/car_cnn_mobilenetv2.keras')
     print("Gespeichert unter models/task1c/car_cnn_mobilenetv2.keras")

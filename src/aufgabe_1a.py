@@ -29,7 +29,7 @@ def main():
     model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
     model.summary()
 
-    # Training mit Early Stopping
+    # Training mit Early Stopping damit wir nicht zu lange trainieren
     early_stop = keras.callbacks.EarlyStopping(monitor='val_loss', patience=3, restore_best_weights=True)
 
     model.fit(
@@ -41,7 +41,7 @@ def main():
         verbose=2
     )
 
-    # Auswertung
+    # Auswertung auf Testdaten
     loss, acc = model.evaluate(x_test, y_test, verbose=0)
     print(f"Test-Accuracy: {acc:.4f}")
 

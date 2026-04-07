@@ -195,50 +195,61 @@ class ScratchCNN:
 def main():
     (x_train, y_train), _, (x_test, y_test) = lade_cifar10()
 
-    # Kleinerer Datensatz, runterskaliert auf 16x16
+    # Kleinerer Datensatz für die eigene Implementierung
+    # Bilder runterskalieren auf 16x16 (jedes zweite Pixel)
     # Klassen ausbalancieren damit das Netz auch wirklich lernt
-    auto_idx = np.where(y_train == 1)[0][:1500]
-    nicht_auto_idx = np.where(y_train == 0)[0][:1500]
+    np.random.seed(24)
+
+    n_train_per_class = 1800
+    n_test_per_class = 700
+
+    auto_idx = np.where(y_train == 1)[0][:n_train_per_class]
+    nicht_auto_idx = np.where(y_train == 0)[0][:n_train_per_class]
     idx_b = np.concatenate([auto_idx, nicht_auto_idx])
     np.random.shuffle(idx_b)
 
     x_train_b = x_train[idx_b][:, ::2, ::2, :]
     y_train_b = y_train[idx_b].reshape(-1, 1)
 
-    auto_idx_t = np.where(y_test == 1)[0][:500]
-    nicht_auto_idx_t = np.where(y_test == 0)[0][:500]
+    auto_idx_t = np.where(y_test == 1)[0][:n_test_per_class]
+    nicht_auto_idx_t = np.where(y_test == 0)[0][:n_test_per_class]
     idx_bt = np.concatenate([auto_idx_t, nicht_auto_idx_t])
+    np.random.shuffle(idx_bt)
     x_test_b = x_test[idx_bt][:, ::2, ::2, :]
     y_test_b = y_test[idx_bt].reshape(-1, 1)
 
-    print("Train (1b):", x_train_b.shape, y_train_b.shape)
-    print("Test  (1b):", x_test_b.shape, y_test_b.shape)
+    print("Train (1b):", x_train_b.shape, y_train_b.shape, "| Anteil Autos:", f"{y_train_b.mean():.2f}")
+    print("Test  (1b):", x_test_b.shape, y_test_b.shape, "| Anteil Autos:", f"{y_test_b.mean():.2f}")
 
-    model = ScratchCNN()
-    epochs = 15
-    lr = 0.1
+    # Training
+    model_b = ScratchCNN()
+    epochs_b = 15
+    lr_b = 0.1
     bs = 32
 
-    for epoch in range(1, epochs + 1):
+    for epoch in range(1, epochs_b + 1):
+        # Daten mischen
         idx = np.random.permutation(len(x_train_b))
         losses = []
         for start in range(0, len(idx), bs):
             batch = idx[start:start+bs]
             xb, yb = x_train_b[batch], y_train_b[batch]
-            pred = model.forward(xb)
-            loss = model.bce_loss(pred, yb)
-            grad = model.bce_grad(pred, yb)
-            model.backward(grad, lr=lr)
+            pred = model_b.forward(xb)
+            loss = model_b.bce_loss(pred, yb)
+            grad = model_b.bce_grad(pred, yb)
+            model_b.backward(grad, lr=lr_b)
             losses.append(loss)
 
-        train_pred = model.predict(x_train_b[:400]).reshape(-1)
+        # Kurze Auswertung
+        train_pred = model_b.predict(x_train_b[:400]).reshape(-1)
         train_acc = np.mean(train_pred == y_train_b[:400].reshape(-1))
-        test_pred = model.predict(x_test_b).reshape(-1)
+        test_pred = model_b.predict(x_test_b).reshape(-1)
         test_acc = np.mean(test_pred == y_test_b.reshape(-1))
-        print(f"Epoch {epoch}/{epochs} | loss={np.mean(losses):.4f} | train_acc={train_acc:.4f} | test_acc={test_acc:.4f}")
+        print(f"Epoch {epoch}/{epochs_b} | loss={np.mean(losses):.4f} | train_acc={train_acc:.4f} | test_acc={test_acc:.4f}")
 
+    # Speichern
     Path('models/task1b').mkdir(parents=True, exist_ok=True)
-    model.save('models/task1b/car_cnn_scratch.npz')
+    model_b.save('models/task1b/car_cnn_scratch.npz')
     print("Gespeichert unter models/task1b/car_cnn_scratch.npz")
 
 
