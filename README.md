@@ -57,7 +57,7 @@ models/             (wird beim Ausführen erstellt – trainierte Modelle)
 > - `models/task1b/car_cnn_scratch.npz`
 > - `models/task1c/car_cnn_mobilenetv2.keras`
 
-### Aufgabe 2 (A2)
+### Aufgabe 2 (A2): Autodetektion
 
 > 
 > **A2 - Umsetzung und Ausführung**
@@ -65,7 +65,7 @@ models/             (wird beim Ausführen erstellt – trainierte Modelle)
 > Das Notebook `notebooks/aufgabe_2.ipynb` implementiert die Anwendung des in Aufgabe 1a entwickelten Modells zur Detektion von Autos in verschiedenen Bildern.
 > Es werdem sowohl drei vorgegebene Bilder (Aufgabe 2a) als auch drei aus dem Internet gewählte Bilder (Aufgabe 2) untersucht.
 >
-> **Empfohlen:** Ausführung lokal in Jupyter**.
+> **Empfohlen:** Ausführung lokal in Jupyter.
 > 1. `notebooks/aufgabe_2.ipynb` in IDE oder Jupyter öffnen.
 > 2. ipykernel auswählen und Ausführung des Notebooks starten.
 > 
