@@ -65,12 +65,12 @@ models/             (wird beim Ausführen erstellt – trainierte Modelle)
 > Das Notebook `notebooks/aufgabe_2.ipynb` implementiert die Anwendung des in Aufgabe 1a entwickelten Modells zur Detektion von Autos in verschiedenen Bildern.
 > Es werdem sowohl drei vorgegebene Bilder (Aufgabe 2a) als auch drei aus dem Internet gewählte Bilder (Aufgabe 2) untersucht.
 >
-> **Empfohlen:** Ausführung in **Google Colab mit `T4 GPU`**.
-> 1. `notebooks/aufgabe_2.ipynb` in Colab öffnen.
-> 2. Unter Runtime/Laufzeit den Beschleuniger auf `T4 GPU` stellen.
-> 3. Alle Zellen von oben nach unten ausführen.
+> **Empfohlen:** Ausführung lokal in Jupyter**.
+> 1. `notebooks/aufgabe_2.ipynb` in IDE oder Jupyter öffnen.
+> 2. ipykernel auswählen und Ausführung des Notebooks starten.
 > 
-> Lokal in Jupyter ist es auch möglich, aber langsamer.
+> Die Ausführung ist nur eingeschränkt in Google Collab möglich.
+> Eine Anzeige der Bilder mit Rahmen nach vollständiger Analyse mit der Funktion cv2.imshow() funktioniert nicht.
 >
 > **Pakete installieren:**  
 > ```
