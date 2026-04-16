@@ -60,11 +60,30 @@ models/             (wird beim Ausführen erstellt – trainierte Modelle)
 ### Aufgabe 2 (A2)
 
 > 
-> **A2 - Platzhalter**
+> **A2 - Umsetzung und Ausführung**
 > 
-> In Arbeit.
+> Das Notebook `notebooks/aufgabe_2.ipynb` implementiert die Anwendung des in Aufgabe 1a entwickelten Modells zur Detektion von Autos in verschiedenen Bildern.
+> Es werdem sowohl drei vorgegebene Bilder (Aufgabe 2a) als auch drei aus dem Internet gewählte Bilder (Aufgabe 2) untersucht.
+>
+> **Empfohlen:** Ausführung in **Google Colab mit `T4 GPU`**.
+> 1. `notebooks/aufgabe_2.ipynb` in Colab öffnen.
+> 2. Unter Runtime/Laufzeit den Beschleuniger auf `T4 GPU` stellen.
+> 3. Alle Zellen von oben nach unten ausführen.
 > 
-> **Ausführen:** Folgt.
+> Lokal in Jupyter ist es auch möglich, aber langsamer.
+>
+> **Pakete installieren:**  
+> ```
+> pip install -r requirements.txt
+> ```
+>
+> **Eingabebilder:**  
+> Die vorgegeben Bilder sowie die aus dem Internet gewählten Bilder für die Autodetektion sind in `src/input_images` gespeichert.
+>
+> **Ergebnisse:**  
+> Die von der Aufgabenstellung geforderten Bildausschnitte mit einzelnen und gesamten Bounding Boxes (Rahmen) sind in `src/result_images` gespeichert.
+> 
+
 
 ### Aufgabe 3 (A3): SciQ-Scorecards-Chatbot
 
