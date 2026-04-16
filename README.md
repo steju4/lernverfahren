@@ -60,11 +60,30 @@ models/             (wird beim Ausführen erstellt – trainierte Modelle)
 ### Aufgabe 2 (A2)
 
 > 
-> **A2 - Platzhalter**
+> **A2 - Umsetzung und Ausführung**
 > 
-> In Arbeit.
+> Das Notebook `notebooks/aufgabe_2.ipynb` implementiert die Anwendung des in Aufgabe 1a entwickelten Modells zur Detektion von Autos in verschiedenen Bildern.
+> Es werdem sowohl drei vorgegebene Bilder (Aufgabe 2a) als auch drei aus dem Internet gewählte Bilder (Aufgabe 2) untersucht.
+>
+> **Empfohlen:** Ausführung lokal in Jupyter**.
+> 1. `notebooks/aufgabe_2.ipynb` in IDE oder Jupyter öffnen.
+> 2. ipykernel auswählen und Ausführung des Notebooks starten.
 > 
-> **Ausführen:** Folgt.
+> Die Ausführung ist nur eingeschränkt in Google Collab möglich.
+> Eine Anzeige der Bilder mit Rahmen nach vollständiger Analyse mit der Funktion cv2.imshow() funktioniert nicht.
+>
+> **Pakete installieren:**  
+> ```
+> pip install -r requirements.txt
+> ```
+>
+> **Eingabebilder:**  
+> Die vorgegeben Bilder sowie die aus dem Internet gewählten Bilder für die Autodetektion sind in `src/input_images` gespeichert.
+>
+> **Ergebnisse:**  
+> Die von der Aufgabenstellung geforderten Bildausschnitte mit einzelnen und gesamten Bounding Boxes (Rahmen) sind in `src/result_images` gespeichert.
+> 
+
 
 ### Aufgabe 3 (A3): SciQ-Scorecards-Chatbot
 
